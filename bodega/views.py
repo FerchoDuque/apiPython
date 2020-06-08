@@ -34,7 +34,7 @@ def bodega_list(request):
 def bodega_detail(request, pk):
     #busca un producto por PK (id)
         try:
-            producto = Producto.objects.get(pk=pk)
+            producto = Producto.objects.get(codigo=pk)
             if request.method == 'GET':
                 producto_serializer = ProductoSerializer(producto)
                 return JsonResponse(producto_serializer.data)
